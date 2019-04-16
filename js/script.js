@@ -38,7 +38,9 @@ function chooseGoods(){
 
 chooseGoods();
 
+function budgetOneDay(){
+    var budgetOneDay= myBudget/30;
+    alert("Ваш бюджет на один день " + budgetOneDay);
+}
 
-var budgetOneDay= myBudget/30;
-alert("Ваш бюджет на один день " + budgetOneDay);
 console.log(mainList);
