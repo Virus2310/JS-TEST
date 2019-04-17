@@ -4,14 +4,12 @@ var myBudget, nameMagaz, price;
 function start() {
     myBudget = prompt("Ваш бюджет?");
 
-    while (isNan(money)|| money == "" || money == null) {
+    while (isNaN(myBudget)|| myBudget == "" || myBudget == null) {
         myBudget = prompt("Ваш бюджет?");
     }
 
     nameMagaz = prompt("Название вашего магазина?").toUpperCase();
 }
-
-
 start();
 
 var mainList = {
@@ -20,7 +18,7 @@ var mainList = {
     shopGoods: [],
     employers: {},
     open: true,
-    discount: false
+    discount: true
 
 }
 function chooseGoods(){
@@ -35,12 +33,36 @@ function chooseGoods(){
         }
     }
 }
-
 chooseGoods();
 
-function budgetOneDay(){
+function budgetOneDay() {
     var budgetOneDay= myBudget/30;
     alert("Ваш бюджет на один день " + budgetOneDay);
 }
+budgetOneDay();
+
+function discountSystem() {
+    price = 1000;
+    while(mainList.discount == true){
+        disc= price*80/100;
+        alert("Ваша знижка становить " + disc);
+        break;
+    }
+}
+discountSystem();
+
+function addEmployers() {   
+    for(i = 1 ;i < 4; i++) {
+        let emp = prompt("Имя вашего сотрудника");
+
+        if( (typeof(emp)) === 'string' && (typeof(emp)) === null && emp != '' && a.length < 50) {
+            console.log("Vse Virno");
+            mainList.employers[i] = emp; 
+        } else {
+            
+        }
+    }
+}
+addEmployers();
 
 console.log(mainList);
