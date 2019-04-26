@@ -58,13 +58,17 @@ var mainList = {
         },
         chooseShopItems: function chooseShopItems() {
             let items = prompt("Перерахуйте через кому ваші товари", "");
-            mainList.shopItems = items;
+            // mainList.shopItems = items;
             mainList.shopItems = items.split(",");
             mainList.shopItems.push(prompt("Почекайте трохи ", ""));
             mainList.shopItems.sort();
-            mainList.shopItems.forEach(function(item, i, arr) {
-                alert("У нас вы можете купить: " + i[1] + ": " + item );
+            mainList.shopItems.forEach(function(el, index) {
+                alert("У нас вы можете купить: " + (`index: ${index,1}, element:${el}`));
             });
+
+            for( let key in mainList.shopItems) {
+                alert("Наш магазин включает в себя: " + mainList.shopItems[key]);
+            }
         }
     } // mainList
 
