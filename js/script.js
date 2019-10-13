@@ -1,4 +1,4 @@
-var myBudget, nameMagaz, price;
+let myBudget, nameMagaz, price;
 
 function start() {
     myBudget = prompt("Ваш бюджет?");
@@ -27,7 +27,7 @@ var mainList = {
                     console.log("Vse Virno");
                     mainList.shopGoods[i] = a;
                 } else {
-
+                    // i = i - 1;
                 }
             }
         },
@@ -36,6 +36,7 @@ var mainList = {
             let budgetOneDay = myBudget / 30;
             alert("Ваш бюджет на один день " + budgetOneDay);
         },
+
         discountSystem: function discountSystem() {
             price = 1000;
             while (mainList.discount == true) {
@@ -44,18 +45,18 @@ var mainList = {
                 break;
             }
         },
+
         addEmployers: function addEmployers() {
             for (i = 1; i < 4; i++) {
                 let name = prompt("Имя вашего сотрудника");
+                mainList.employers[i] = name;
+            }
 
-                if ((typeof(name)) === 'string' && (typeof(name)) === null && name != '' && a.length < 50) {
-                    console.log("Vse Virno");
-                    mainList.employers[i] = name;
-                } else {
-
-                }
+            for (let key in mainList.employers) {
+                alert("Ваші співробітники " + key + ' : ' + mainList.employers[key]);
             }
         },
+
         chooseShopItems: function chooseShopItems() {
             let items = prompt("Перерахуйте через кому ваші товари", "");
             // mainList.shopItems = items;
@@ -71,9 +72,6 @@ var mainList = {
             }
         }
     } // mainList
-
-
-
 
 
 
